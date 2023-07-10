@@ -7,8 +7,8 @@ module.exports = {
       colors: {
         primary: "#585A56",
         secondary: "#272424",
-        dimWhite: "rgba(255, 255, 255, 0.7)",
-        dimBlue: "rgba(9, 151, 124, 0.1)",
+        balance: "#727476",
+        balanceText: "#F7E00D",
       },
       fontFamily: {
         rubik: ["Rubik", "sans-serif"],
