@@ -3,7 +3,7 @@ import { icon, incomeIcon, outgoing } from '../assets/mainPage'
 
 const RightSidebar = () => {
   return (
-    <div className='bg-secondary text-white text-center max-w-[352px] h-full fixed z-1 top-0 right-0 px-7 pt-8's>
+    <div className='bg-secondary text-white text-center w-fit h-full px-7 pt-8 relative'>
         {/* Гость */}
         <div className='bg-primary px-24 py-4 rounded-xl mb-7'>
             <div className='flex flex-col items-center'>

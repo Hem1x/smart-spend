@@ -10,8 +10,8 @@ module.exports = {
         balance: "#727476",
         balanceText: "#F7E00D",
         bgHistory: "#31383C",
-        income: "#5DCD36",
-        outgoing: "#FD5F40"
+        income: "#2EDC69",
+        outgoing: "#FF7459",
       },
       fontFamily: {
         rubik: ["Rubik", "sans-serif"],
