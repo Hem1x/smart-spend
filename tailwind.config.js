@@ -9,6 +9,9 @@ module.exports = {
         secondary: "#272424",
         balance: "#727476",
         balanceText: "#F7E00D",
+        bgHistory: "#31383C",
+        income: "#5DCD36",
+        outgoing: "#FD5F40"
       },
       fontFamily: {
         rubik: ["Rubik", "sans-serif"],
