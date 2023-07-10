@@ -4,7 +4,7 @@ const IncomeExpensePanel = ({title}) => {
     const color = title === 'Доходы' ? 'bg-income' : 'bg-outgoing'
 
     return (
-        <div class={`w-1/2 ${color} rounded-3xl py-8 px-10 shadow`}>
+        <div class={`w-1/2 ${color} rounded-3xl py-8 px-10  shadow-blockShadow`}>
             {/* Название */}
             <div class="text-4xl font-bold mb-4 drop-shadow">{title}</div>
 

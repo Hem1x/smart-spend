@@ -5,6 +5,9 @@ import dashboard from './dashboard.svg'
 import news from './news.svg'
 import incomeIcon from './incomeIcon.svg'
 import outgoing from './outgoingIcon.svg'
+import car from './car.svg'
+import home from './home.svg'
+import watch from './watch.svg'
 
 export {
     logo,
@@ -13,5 +16,8 @@ export {
     dashboard,
     news,
     incomeIcon,
-    outgoing
+    outgoing,
+    car,
+    home,
+    watch
 }

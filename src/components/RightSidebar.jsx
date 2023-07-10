@@ -16,7 +16,7 @@ const RightSidebar = () => {
         <p className='text-[26px] font-semibold mb-6'>История действий</p>
 
         {/* История действий */}
-        <div className='h-full bg-bgHistory absolute left-0 right-0 px-5'>
+        <div className='bg-bgHistory absolute left-0 right-0 px-5'>
             <div className='mt-6'>
                 {/* Список действий */}
                 <ul>

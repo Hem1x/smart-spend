@@ -5,7 +5,7 @@ import RightSidebar from './components/RightSidebar'
 
 const App = () => {
   return (
-    <div className='bg-primary h-screen overflow-hidden flex justify-between'>
+    <div className='bg-primary h-screen flex justify-between'>
       <LeftSidebar />
       <Dashboard />
       <RightSidebar />
