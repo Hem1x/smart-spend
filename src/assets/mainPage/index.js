@@ -8,6 +8,7 @@ import outgoing from './outgoingIcon.svg'
 import car from './car.svg'
 import home from './home.svg'
 import watch from './watch.svg'
+import advice from './advice.svg'
 
 export {
     logo,
@@ -19,5 +20,6 @@ export {
     outgoing,
     car,
     home,
-    watch
+    watch,
+    advice
 }

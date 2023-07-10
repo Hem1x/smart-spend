@@ -12,7 +12,8 @@ module.exports = {
         bgHistory: "#31383C",
         income: "#2EDC69",
         outgoing: "#FF7459",
-        yellowBtn: "#FFD700"
+        yellowBtn: "#FFD700",
+        hashtag: "#81A3A7"
       },
       fontFamily: {
         rubik: ["Rubik", "sans-serif"],
