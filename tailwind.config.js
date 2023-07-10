@@ -21,6 +21,9 @@ module.exports = {
       boxShadow: {
         'blockShadow': '0 2px 10px rgba(0, 0, 0, 0.25)',
       },
+      dropShadow: {
+        'textShadow': '0 4px 4px rgba(0, 0, 0, 0.25)'
+      }
     },
     screens: {
       xs: "480px",

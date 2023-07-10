@@ -1,5 +1,5 @@
 import React from 'react'
-import {car} from '../assets/mainPage'
+import {car} from '../../assets/mainPage'
 
 const AimCard = () => {
   return (
