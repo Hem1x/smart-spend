@@ -9,6 +9,7 @@ import car from './car.svg'
 import home from './home.svg'
 import watch from './watch.svg'
 import advice from './advice.svg'
+import arrowLeft from './Arrow_Left.svg'
 
 export {
     logo,
@@ -21,5 +22,6 @@ export {
     car,
     home,
     watch,
-    advice
+    advice,
+    arrowLeft
 }

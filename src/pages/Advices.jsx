@@ -1,5 +1,5 @@
 import React from 'react'
-import Advice from '../components/Advice'
+import Advice from '../components/Advice/Advice'
 
 const Advices = () => {
   return (
