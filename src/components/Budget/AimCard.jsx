@@ -1,17 +1,13 @@
 import React from 'react'
 import {car} from '../../assets/mainPage'
-import { useDispatch, useSelector } from 'react-redux'
-import InvestAimModal from '../Modals/InvestAimModal'
-import { refillAim, refill} from '../../features/Modal/modalSlice'
+import { useDispatch } from 'react-redux'
+import {refill} from '../../features/Modal/modalSlice'
 
 const AimCard = () => {
     const dispatch = useDispatch()
-    const isRefill = useSelector(state => state.modal.refillAim)
 
     return (
         <div>
-            {isRefill && <InvestAimModal title='Дом' />}
-
             <div className="w-[352px] bg-secondary rounded-3xl p-6 shadow-blockShadow flex flex-col">
                 {/* Название */}
                 <div className="titleBlock text-white text-2xl font-bold text-center mb-2">

@@ -3,11 +3,13 @@ import AimCard from '../components/Budget/AimCard'
 import { useSelector, useDispatch } from 'react-redux'
 import {create} from '../features/Modal/modalSlice'
 import CreateAimModal from '../components/Modals/CreateAimModal'
+import InvestAimModal from '../components/Modals/InvestAimModal'
 
 const Budget = () => {
   const dispatch = useDispatch()
   const createModal = useSelector(state => state.modal.createAim)
-
+  const isRefill = useSelector(state => state.modal.refillAim)
+  
   return (
     <div className='p-8 flex-1'>
         {/* Хедер (Название раздела + Кнопка) */}
@@ -20,6 +22,7 @@ const Budget = () => {
         </div>
         
         {createModal && <CreateAimModal title="Создание цели"/>}
+        {isRefill && <InvestAimModal title='Дом' />}
 
         {/* Список финансовых целей */}
         <div className='flex flex-wrap justify-evenly gap-8'>
