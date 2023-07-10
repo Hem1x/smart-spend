@@ -6,7 +6,10 @@ const LeftSidebar = () => {
   return (
     <div className='bg-secondary text-white w-fit h-full px-7 pt-8'>
         {/* logo */}
-        <img className='mb-12' src={logo} alt="logo" />
+        <Link to="/dashboard">
+            <img className='mb-12' src={logo} alt="logo" />
+        </Link>
+
 
         {/* balance */}
         <div className='w-72 rounded-xl bg-balance px-5 py-4 text-center mb-[60px]'>

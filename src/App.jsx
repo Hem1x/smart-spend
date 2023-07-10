@@ -12,13 +12,14 @@ const App = () => {
     <BrowserRouter>
       <div className='bg-primary h-screen flex justify-between'>
         <LeftSidebar />
-          <Routes>
-            <Route path='/dashboard' element={<Dashboard />}/>
-            <Route path='/budget' element={<Budget />}/>
-            <Route path='/advices' element={<Advices />}/>
-            <Route path='advices/:id' element={<AdvicePage />}/>
-          </Routes>
-        
+
+        <Routes>
+          <Route path='/dashboard' element={<Dashboard />}/>
+          <Route path='/budget' element={<Budget />}/>
+          <Route path='/advices' element={<Advices />}/>
+          <Route path='advices/:id' element={<AdvicePage />}/>
+        </Routes>
+
         <RightSidebar />
       </div>
     </BrowserRouter>

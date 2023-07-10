@@ -20,6 +20,7 @@ module.exports = {
       },
       boxShadow: {
         'blockShadow': '0 2px 10px rgba(0, 0, 0, 0.25)',
+        'modalShadow': '0px 4px 4px 0px rgba(0, 0, 0, 0.40);'
       },
       dropShadow: {
         'textShadow': '0 4px 4px rgba(0, 0, 0, 0.25)'

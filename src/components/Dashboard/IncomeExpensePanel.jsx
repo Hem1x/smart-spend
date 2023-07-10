@@ -1,6 +1,6 @@
 import React from 'react'
 
-const IncomeExpensePanel = ({title}) => {
+const IncomeExpensePanel = ({title, setIsActive}) => {
     const color = title === 'Доходы' ? 'bg-income' : 'bg-outgoing'
 
     return (
@@ -13,7 +13,10 @@ const IncomeExpensePanel = ({title}) => {
                 <div class="text-3xl font-semibold text-white drop-shadow">
                     <span className='drop-shadow-textShadow'>36 560,70 ₽</span>
                 </div>
-                <button class={`w-12 h-12 ${color} rounded-full flex items-center justify-center shadow`}>+</button>
+
+                <button class={`w-12 h-12 ${color} rounded-full flex items-center justify-center shadow`}>
+                    +
+                </button>
             </div>
 
             {/* Доп */}
