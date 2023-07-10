@@ -1,7 +1,7 @@
 import React from 'react'
-import IncomeExpensePanel from './IncomeExpensePanel'
-import AimCard from './AimCard'
-import AnnonceBlockNews from './AnnonceBlockNews'
+import IncomeExpensePanel from '../components/IncomeExpensePanel'
+import AimCard from '../components/AimCard'
+import AnnonceBlockNews from '../components/AnnonceBlockNews'
 
 const Dashboard = () => {
   return (

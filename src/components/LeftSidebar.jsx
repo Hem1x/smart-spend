@@ -1,5 +1,6 @@
 import React from 'react'
 import {logo, dashboard, budget, news} from '../assets/mainPage'
+import { Link } from 'react-router-dom'
 
 const LeftSidebar = () => {
   return (
@@ -14,23 +15,21 @@ const LeftSidebar = () => {
         </div>
 
         {/* control panel */}
-        <div>
-            <ul className='flex flex-col gap-6 text-[22px] font-light'>
-                <li className='flex items-center'>
-                    <img className='mr-4' src={dashboard} alt="dashboard" />
-                    <h2>Панель управления</h2>
-                </li>
+        <div className='flex flex-col gap-6 text-[22px] font-light'>
+            <Link to='/dashboard' className='flex items-center'>
+                <img className='mr-4' src={dashboard} alt="dashboard" />
+                <h2>Панель управления</h2>
+            </Link>
 
-                <li className='flex items-center cursor-pointer'>
-                    <img className='mr-4' src={budget} alt="budget" />
-                    <h2>Бюджетирование</h2>
-                </li>
+            <Link to='/budget' className='flex items-center cursor-pointer'>
+                <img className='mr-4' src={budget} alt="budget" />
+                <h2>Бюджетирование</h2>
+            </Link>
 
-                <li className='flex items-center cursor-pointer'>
-                    <img className='mr-4' src={news} alt="news" />
-                    <h2>Новостной блог</h2>
-                </li>
-            </ul>
+            <Link to='/advices' className='flex items-center cursor-pointer'>
+                <img className='mr-4' src={news} alt="news" />
+                <h2>Новостной блог</h2>
+            </Link>
         </div>
     </div>
 
