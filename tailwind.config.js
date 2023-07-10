@@ -12,13 +12,14 @@ module.exports = {
         bgHistory: "#31383C",
         income: "#2EDC69",
         outgoing: "#FF7459",
+        yellowBtn: "#FFD700"
       },
       fontFamily: {
         rubik: ["Rubik", "sans-serif"],
       },
       boxShadow: {
         'blockShadow': '0 2px 10px rgba(0, 0, 0, 0.25)',
-      }
+      },
     },
     screens: {
       xs: "480px",

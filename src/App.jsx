@@ -3,6 +3,8 @@ import Dashboard from './pages/Dashboard'
 import LeftSidebar from './components/LeftSidebar'
 import RightSidebar from './components/RightSidebar'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Budget from './pages/Budget'
+import Advices from './pages/Advices'
 
 const App = () => {
   return (
@@ -11,8 +13,8 @@ const App = () => {
         <LeftSidebar />
           <Routes>
             <Route path='/dashboard' element={<Dashboard />}/>
-            <Route path='/budget' element={<Dashboard />}/>
-            <Route path='/advices' element={<Dashboard />}/>
+            <Route path='/budget' element={<Budget />}/>
+            <Route path='/advices' element={<Advices />}/>
           </Routes>
         
         <RightSidebar />
