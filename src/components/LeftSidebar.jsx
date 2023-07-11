@@ -1,6 +1,6 @@
 import React from 'react'
 import {logo, dashboard, budget, news} from '../assets/mainPage'
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { numberWithSpaces } from '../utils'
 
@@ -23,20 +23,20 @@ const LeftSidebar = () => {
 
             {/* control panel */}
             <div className='flex flex-col gap-6 text-[22px] font-light'>
-                <Link to='/dashboard' className='flex items-center'>
+                <NavLink to='/dashboard' className='sidebar-link'>
                     <img className='mr-4' src={dashboard} alt="dashboard" />
                     <h2>Панель управления</h2>
-                </Link>
+                </NavLink>
 
-                <Link to='/budget' className='flex items-center cursor-pointer'>
+                <NavLink to='/budget' className='sidebar-link'>
                     <img className='mr-4' src={budget} alt="budget" />
                     <h2>Бюджетирование</h2>
-                </Link>
+                </NavLink>
 
-                <Link to='/advices' className='flex items-center cursor-pointer'>
+                <NavLink to='/advices' className='sidebar-link'>
                     <img className='mr-4' src={news} alt="news" />
                     <h2>Новостной блог</h2>
-                </Link>
+                </NavLink>
             </div>
         </div>
 

@@ -14,7 +14,7 @@ const AimCardRefill = ({aim}) => {
             {aim.isModalFormActive && <InvestAimModal aim={aim} />}
 
             <div>
-                <div className="w-[352px] bg-secondary rounded-3xl p-6 shadow-blockShadow flex flex-col">
+                <div className="w-[348px] bg-secondary rounded-3xl p-6 shadow-blockShadow flex flex-col">
                     {/* Название */}
                     <div className="text-white text-2xl font-bold text-center mb-2">
                         <p>{aim.name}</p>

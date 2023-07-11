@@ -46,4 +46,13 @@ body {
     font-family: 'Rubik';
     color: white;
 }
+
+.active {
+    font-weight: 700;
+    color: #FFD700;
+}
+
+.sidebar-link {
+    @apply flex items-center transition-all duration-200 hover:text-yellowBtn
+}
   

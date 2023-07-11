@@ -1,6 +1,7 @@
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import {MotionConfig} from 'framer-motion'
 
 import LeftSidebar from './components/LeftSidebar'
 import RightSidebar from './components/RightSidebar'
@@ -18,6 +19,7 @@ const FinanceApp = () => {
     const income = useSelector(state => state.modal.incomeModal)
     const expense = useSelector(state => state.modal.expenseModal)
 
+    const location = useLocation()
     return (
         <div> 
             {createModal && <CreateAimModal title="Создать цель"/>}
@@ -26,12 +28,14 @@ const FinanceApp = () => {
             <div className='bg-primary h-screen flex justify-between'>
                 <LeftSidebar />
 
-                <Routes>
-                    <Route path='dashboard' element={<Dashboard />}/>
-                    <Route path='budget' element={<Budget />}/>
-                    <Route path='advices' element={<Advices />}/>
-                    <Route path='advices/:id' element={<AdvicePage />}/>
-                </Routes>
+                <MotionConfig transition={{ duration: 1 }}>
+                    <Routes location={location} key={location.pathname}>
+                        <Route path='dashboard' element={<Dashboard />}/>
+                        <Route path='budget' element={<Budget />}/>
+                        <Route path='advices' element={<Advices />}/>
+                        <Route path='advices/:id' element={<AdvicePage />}/>
+                    </Routes>
+                </MotionConfig>
 
                 <RightSidebar />
             </div>
