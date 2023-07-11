@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {openIncome, openExpense} from '../../features/Modal/modalSlice'
+import { numberWithSpaces } from '../../utils'
 
 const IncomeExpensePanel = ({title}) => {
     const dispatch = useDispatch()
@@ -29,7 +30,7 @@ const IncomeExpensePanel = ({title}) => {
             {/* Ячейка */}
             <div className="flex items-center justify-between w-full bg-white bg-opacity-60 rounded-3xl px-4 py-3 shadow-blockShadow">
                 <div className="text-3xl font-semibold text-white">
-                    <span className='drop-shadow-textShadow'>{objectPanel.sum} ₽</span>
+                    <span className='drop-shadow-textShadow'>{numberWithSpaces(objectPanel.sum)} ₽</span>
                 </div>
 
                 <button onClick={() => dispatch(objectPanel.open())} className={`w-12 h-12 ${objectPanel.color} rounded-full flex items-center justify-center shadow`}>

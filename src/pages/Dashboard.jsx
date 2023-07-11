@@ -23,6 +23,7 @@ const Dashboard = () => {
 
       {/* Совет дня */}
       <div className='w-full'>
+        <h1 className='mb-4 font-semibold text-3xl drop-shadow-textShadow'>Совет дня:</h1>
         <AnnonceBlockNews />
       </div>
     </div>

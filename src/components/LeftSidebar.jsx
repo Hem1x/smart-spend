@@ -2,6 +2,7 @@ import React from 'react'
 import {logo, dashboard, budget, news} from '../assets/mainPage'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { numberWithSpaces } from '../utils'
 
 const LeftSidebar = () => {
     const balance = useSelector(state => state.finance.income) - useSelector(state => state.finance.expense)
@@ -17,7 +18,7 @@ const LeftSidebar = () => {
             {/* balance */}
             <div className='w-72 rounded-xl bg-balance px-5 py-4 text-center mb-[60px]'>
             <h3 className='text-[20px]'>Ваши средства:</h3>
-            <span className='text-balanceText text-[38px] font-bold'>{balance} ₽</span>
+            <span className='text-balanceText text-[38px] font-bold'>{numberWithSpaces(balance)} ₽</span>
             </div>
 
             {/* control panel */}
