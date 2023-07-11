@@ -17,7 +17,12 @@ const Budget = () => {
               <h1 className='text-5xl font-bold'>Бюджетирование</h1>
 
               {/* Создать цель */}
-              <button onClick={() => dispatch(openCreate())} className='bg-yellowBtn text-black px-5 py-2 rounded-xl text-2xl font-semibold'>Создать цель</button>
+              <button 
+                onClick={() => dispatch(openCreate())} 
+                className='px-5 py-2 rounded-xl text-lg font-bold bg-yellowBtn text-black hover:scale-110 transition-all duration-200'
+              >
+                Создать цель
+              </button>
           </div>
 
           {/* Список финансовых целей */}

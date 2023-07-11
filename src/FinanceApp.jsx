@@ -28,7 +28,7 @@ const FinanceApp = () => {
             <div className='bg-primary h-screen flex justify-between'>
                 <LeftSidebar />
 
-                <MotionConfig transition={{ duration: 1 }}>
+                <MotionConfig transition={{ duration: .7 }}>
                     <Routes location={location} key={location.pathname}>
                         <Route path='dashboard' element={<Dashboard />}/>
                         <Route path='budget' element={<Budget />}/>

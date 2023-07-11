@@ -15,15 +15,20 @@ const IncomeExpensePanel = ({title}) => {
         sum: incomeSum,
         color: 'bg-income',
         open: openIncome,
+        colorAnimation: 'hover:bg-green-500',
+        shadowHover: 'hover:shadow-IncomeBlockShadowHover'
+
     } : {
         title: 'Расходы',
         sum: expenseSum,
         color: 'bg-outgoing',
         open: openExpense,
+        colorAnimation: 'hover:bg-red-400',
+        shadowHover: 'hover:shadow-ExpenseBlockShadowHover'
     }
 
     return (
-        <div className={`w-1/2 ${objectPanel.color} rounded-3xl py-8 px-10  shadow-blockShadow`}>
+        <div className={`w-1/2 ${objectPanel.color} rounded-3xl py-8 px-10  shadow-blockShadow ${objectPanel.shadowHover} duration-200 transition-all cursor-pointer`}>
             {/* Название */}
             <h1 className="text-4xl font-bold mb-4 drop-shadow-textShadow">{objectPanel.title}</h1>
 
@@ -33,7 +38,10 @@ const IncomeExpensePanel = ({title}) => {
                     <span className='drop-shadow-textShadow'>{numberWithSpaces(objectPanel.sum)} ₽</span>
                 </div>
 
-                <button onClick={() => dispatch(objectPanel.open())} className={`w-12 h-12 ${objectPanel.color} rounded-full flex items-center justify-center shadow`}>
+                <button
+                    onClick={() => dispatch(objectPanel.open())} 
+                    className={`w-12 h-12 ${objectPanel.color} rounded-full flex items-center justify-center shadow transition-all hover:scale-105 ${objectPanel.colorAnimation}`}
+                >
                     +
                 </button>
             </div>

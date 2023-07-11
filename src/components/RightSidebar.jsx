@@ -7,7 +7,7 @@ const RightSidebar = () => {
     const transactionList = useSelector(state => state.history)
 
     return (
-        <div className='bg-secondary text-white text-center w-fit h-full px-7 pt-8 relative'>
+        <div className='bg-secondary text-white text-center w-fit px-7 pt-8 relative'>
             {/* Гость */}
             <div className='bg-primary px-24 py-4 rounded-xl mb-7'>
                 <div className='flex flex-col items-center'>
