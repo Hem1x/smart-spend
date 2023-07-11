@@ -55,4 +55,31 @@ body {
 .sidebar-link {
     @apply flex items-center transition-all duration-200 hover:text-yellowBtn
 }
+
+.fade-enter {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  
+  .fade-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+  }
+  
+  .fade-exit {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .fade-exit-active {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+  }
+  
+  .transaction-list {
+    list-style-type: none;
+    padding: 0;
+  }
   

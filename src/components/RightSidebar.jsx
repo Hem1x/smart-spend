@@ -2,6 +2,7 @@ import React from 'react'
 import { icon } from '../assets/mainPage'
 import { useSelector } from 'react-redux'
 import Transaction from './Transaction'
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const RightSidebar = () => {
     const transactionList = useSelector(state => state.history)
@@ -19,14 +20,17 @@ const RightSidebar = () => {
 
             <p className='text-[26px] font-semibold mb-6'>История действий</p>
 
-            {/* История действий */}
             <div className='bg-bgHistory absolute left-0 right-0 px-5'>
                 <div className='mt-6'>
-                    {/* Список действий */}
-                    <ul>
-                        {/* Транзакция */}
-                        {transactionList.map(tranc => <Transaction key={tranc.id} tranc={tranc}/>)}
-                    </ul>
+                    <TransitionGroup component="ul" className="transaction-list">
+                    {transactionList.map((tranc) => (
+                        <CSSTransition key={tranc.id} timeout={500} classNames="fade">
+                            <li>
+                                <Transaction tranc={tranc} />
+                            </li>
+                        </CSSTransition>
+                    ))}
+                    </TransitionGroup>
                 </div>
             </div>
         </div>
