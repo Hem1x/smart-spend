@@ -14,7 +14,7 @@ const AimCard = () => {
 
         <div className="mb-4 rounded-full overflow-hidden h-10 relative">
             <div className="bg-white h-full"></div>
-            <span className="absolute left-0 top-0 h-full bg-green-500 w-1/2 rounded-full"></span>
+            <div className="absolute left-0 top-0 h-full bg-green-500 w-1/2 rounded-full"></div>
         </div>
 
         <div className="text-white text-2xl text-center">

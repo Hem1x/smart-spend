@@ -13,7 +13,8 @@ module.exports = {
         income: "#2EDC69",
         outgoing: "#FF7459",
         yellowBtn: "#FFD700",
-        hashtag: "#81A3A7"
+        hashtag: "#81A3A7",
+        overlay: "rgba(0, 0, 0, 0.70)"
       },
       fontFamily: {
         rubik: ["Rubik", "sans-serif"],

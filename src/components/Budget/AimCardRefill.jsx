@@ -3,26 +3,26 @@ import {car} from '../../assets/mainPage'
 import { useDispatch } from 'react-redux'
 import {refill} from '../../features/Modal/modalSlice'
 
-const AimCard = () => {
+const AimCardRefill = () => {
     const dispatch = useDispatch()
 
     return (
         <div>
             <div className="w-[352px] bg-secondary rounded-3xl p-6 shadow-blockShadow flex flex-col">
                 {/* Название */}
-                <div className="titleBlock text-white text-2xl font-bold text-center mb-2">
+                <div className="text-white text-2xl font-bold text-center mb-2">
                     <p>Ferrari 458 Italia</p>
                 </div>
 
                 {/* Фото */}
-                <div className="container h-36 mb-6">
+                <div className="h-36 mb-6">
                     <div className="image bg-cover h-36 w-full rounded-xl" style={{ backgroundImage: `url(${car})` }}></div>
                 </div>
 
                 {/* Прогресс бар */}
                 <div className="mb-4 rounded-full overflow-hidden h-5 relative">
                     <div className="bg-white h-full"></div>
-                    <span className="absolute left-0 top-0 h-full bg-green-500 w-1/2 rounded-full"></span>
+                    <div className="absolute left-0 top-0 h-full bg-green-500 w-1/2 rounded-full"></div>
                 </div>
 
                 {/* Собрано */}
@@ -37,4 +37,4 @@ const AimCard = () => {
     )
 }
 
-export default AimCard
+export default AimCardRefill
