@@ -8,7 +8,7 @@ const rootReduxcer = combineReducers({
     modal: modalSlice,
     finance: financeSlice,
     aim: aimSlice,
-    advice: adviceSlice
+    advice: adviceSlice,
 })
 
 export const store = configureStore({

@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import ModalWindow from '../ModalWindow'
 import { useDispatch } from 'react-redux'
-import { addExpense, addIncome } from '../../features/Finances/financeSlice'
+import { addExpense, addIncome, increaseBalance, decreaseBalance } from '../../features/Finances/financeSlice'
 import { closeAll } from '../../features/Modal/modalSlice'
 
 const InComeExpenseModal = ({title}) => {
@@ -12,8 +12,10 @@ const InComeExpenseModal = ({title}) => {
         e.preventDefault()
         if (title === 'Доходы') {
             dispatch(addIncome(Number(value)))
+            dispatch(increaseBalance(Number(value)))
         } else {
             dispatch(addExpense(Number(value)))
+            dispatch(decreaseBalance(Number(value)))
         }
         dispatch(closeAll())
     }

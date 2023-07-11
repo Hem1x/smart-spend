@@ -14,12 +14,12 @@ const IncomeExpensePanel = ({title}) => {
         title: 'Доходы',
         sum: incomeSum,
         color: 'bg-income',
-        open: openIncome
+        open: openIncome,
     } : {
         title: 'Расходы',
         sum: expenseSum,
         color: 'bg-outgoing',
-        open: openExpense
+        open: openExpense,
     }
 
     return (

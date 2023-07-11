@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ModalWindow from '../ModalWindow'
 import { useSelector, useDispatch } from 'react-redux'
 import { refillAim, closeModalForm } from '../../features/Aims/aimSlice'
+import { decreaseBalance } from '../../features/Finances/financeSlice'
 
 const InvestAimModal = ({aim}) => {
   const dispatch = useDispatch()
@@ -15,9 +16,10 @@ const InvestAimModal = ({aim}) => {
 
     if(value > 0 && value <= balance && error === '') {
       dispatch(refillAim({id: aim.id, sum: value}))
+      dispatch(decreaseBalance(value))
     }
     
-    dispatch(closeModalForm({id: aim.id}))
+    dispatch(closeModalForm(aim.id))
   }
   return (
     <ModalWindow title={aim.name} width='352px' id={aim.id}>  

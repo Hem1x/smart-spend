@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import { numberWithSpaces } from '../utils'
 
 const LeftSidebar = () => {
-    const balance = useSelector(state => state.finance.income) - useSelector(state => state.finance.expense)
+    const balance = useSelector(state => state.finance.balance)
 
     return (
         <div className='bg-secondary text-white w-fit h-full px-7 pt-8'>

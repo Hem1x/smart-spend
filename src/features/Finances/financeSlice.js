@@ -5,6 +5,7 @@ const financeSlice = createSlice({
     initialState: {
         income: 0,
         expense: 0,
+        balance: 0,
     },
     reducers: {
         addIncome(state, action) {
@@ -12,9 +13,15 @@ const financeSlice = createSlice({
         },
         addExpense(state, action) {
             state.expense = state.expense + action.payload
-        }
+        },
+        decreaseBalance(state, action) {
+            state.balance = state.balance - action.payload
+        },
+        increaseBalance(state, action) {
+            state.balance = state.balance + action.payload
+        },
     }
 })
 
 export default financeSlice.reducer;
-export const {addExpense, addIncome} = financeSlice.actions 
+export const {addExpense, addIncome, decreaseBalance, increaseBalance} = financeSlice.actions 

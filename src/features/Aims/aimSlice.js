@@ -22,10 +22,10 @@ const aimSlice = createSlice({
             state.map(aim => aim.id === action.payload.id ? aim.collectedSum += Number(action.payload.sum) : aim)
         },
         openModalForm(state, action) {
-            state.map(aim => aim.id === action.payload.id ? aim.isModalFormActive = true : aim)
+            state.map(aim => aim.id === action.payload ? aim.isModalFormActive = true : aim)
         },
         closeModalForm(state, action) {
-            state.map(aim => aim.id === action.payload.id ? aim.isModalFormActive = false : aim)
+            state.map(aim => aim.id === action.payload ? aim.isModalFormActive = false : aim)
         }
     }
 })

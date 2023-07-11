@@ -42,7 +42,7 @@ const AimCardRefill = ({aim}) => {
                     </div>
 
                     {/* Пополнить */}
-                    <button onClick={() => dispatch(openModalForm({id: aim.id}))} className='bg-yellowBtn text-black font-semibold rounded-xl px-10 py-2'>Пополнить</button>
+                    <button onClick={() => dispatch(openModalForm(aim.id))} className='bg-yellowBtn text-black font-semibold rounded-xl px-10 py-2'>Пополнить</button>
                 </div>
             </div>
         </>
