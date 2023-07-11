@@ -12,21 +12,23 @@ const aimSlice = createSlice({
                 name: action.payload.name,
                 image: car,
                 nessarySum: action.payload.nessarySum,
-                collectedSum: 0
+                collectedSum: 0,
+                isModalFormActive: false
             }
 
             state.push(aimObj)
         },
         refillAim(state, action) {
-            state.map(aim => 
-                aim.id === action.payload.id ? 
-                    aim.collectedSum + action.payload.sum 
-                    : 
-                    aim
-                )
+            state.map(aim => aim.id === action.payload.id ? aim.collectedSum += Number(action.payload.sum) : aim)
+        },
+        openModalForm(state, action) {
+            state.map(aim => aim.id === action.payload.id ? aim.isModalFormActive = true : aim)
+        },
+        closeModalForm(state, action) {
+            state.map(aim => aim.id === action.payload.id ? aim.isModalFormActive = false : aim)
         }
     }
 })
 
 export default aimSlice.reducer
-export const {addAim, refillAim} = aimSlice.actions
+export const {addAim, refillAim, openModalForm, closeModalForm} = aimSlice.actions

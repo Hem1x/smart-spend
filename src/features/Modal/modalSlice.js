@@ -4,16 +4,12 @@ const modalSlice = createSlice({
     name: "modal",
     initialState: {
         createAimModal: false,
-        refillAimModal: false,
         incomeModal: false,
         expenseModal: false,
     },
     reducers: {
         openCreate(state) {
             state.createAim = true
-        },
-        openRefill(state) {
-            state.refillAim = true
         },
         openIncome(state) {
             state.income = true
@@ -23,7 +19,6 @@ const modalSlice = createSlice({
         },
         closeAll(state) {
             state.createAim = false
-            state.refillAim = false
             state.income = false
             state.expense = false
         }
@@ -31,4 +26,4 @@ const modalSlice = createSlice({
 })
 
 export default modalSlice.reducer
-export const {openCreate, openRefill, openIncome, openExpense, closeAll} = modalSlice.actions
+export const {openCreate, openIncome, openExpense, closeAll} = modalSlice.actions

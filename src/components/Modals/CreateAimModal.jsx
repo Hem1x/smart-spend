@@ -26,6 +26,7 @@ const CreateAimModal = ({title}) => {
         <form onSubmit={(e) => createAim(e, aimObj)}>
             <div className='bg-gray-200 py-2 px-5 rounded-full mb-4'>
                 <input
+                    required
                     className='bg-transparent w-full' 
                     placeholder='Название цели'
                     onChange={(e) => setAimObj({...aimObj, name: e.target.value})}
@@ -34,6 +35,7 @@ const CreateAimModal = ({title}) => {
 
             <div className='bg-gray-200 py-2 px-5 rounded-full mb-4'>
                 <input
+                    required
                     className='bg-transparent w-full' 
                     type="number" 
                     placeholder='Необходимая сумма'

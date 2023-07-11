@@ -24,6 +24,7 @@ const InComeExpenseModal = ({title}) => {
                 <form onSubmit={(e) => addFinance(e, value)}>
                     <div className='bg-gray-200 py-2 px-5 rounded-full mb-4'>
                         <input
+                            required
                             className='bg-transparent w-full' 
                             type="number" 
                             placeholder='Введите сумму'
