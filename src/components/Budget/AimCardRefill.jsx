@@ -1,7 +1,7 @@
 import React from 'react'
 import {car} from '../../assets/mainPage'
 import { useDispatch } from 'react-redux'
-import {refill} from '../../features/Modal/modalSlice'
+import {openRefill} from '../../features/Modal/modalSlice'
 
 const AimCardRefill = () => {
     const dispatch = useDispatch()
@@ -31,7 +31,7 @@ const AimCardRefill = () => {
                 </div>
 
                 {/* Пополнить */}
-                <button onClick={() => dispatch(refill())} className='bg-yellowBtn text-black font-semibold rounded-xl px-10 py-2'>Пополнить</button>
+                <button onClick={() => dispatch(openRefill())} className='bg-yellowBtn text-black font-semibold rounded-xl px-10 py-2'>Пополнить</button>
             </div>
         </div>
     )

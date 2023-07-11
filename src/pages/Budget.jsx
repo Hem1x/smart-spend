@@ -1,7 +1,7 @@
 import React from 'react'
 import AimCardRefill from '../components/Budget/AimCardRefill'
 import { useDispatch } from 'react-redux'
-import {create} from '../features/Modal/modalSlice'
+import {openCreate} from '../features/Modal/modalSlice'
 
 const Budget = () => {
   const dispatch = useDispatch()
@@ -14,7 +14,7 @@ const Budget = () => {
             <h1 className='text-5xl font-bold'>Бюджетирование</h1>
 
             {/* Создать цель */}
-            <button onClick={() => dispatch(create())} className='bg-yellowBtn text-black px-5 py-2 rounded-xl text-2xl font-semibold'>Создать цель</button>
+            <button onClick={() => dispatch(openCreate())} className='bg-yellowBtn text-black px-5 py-2 rounded-xl text-2xl font-semibold'>Создать цель</button>
         </div>
 
         {/* Список финансовых целей */}

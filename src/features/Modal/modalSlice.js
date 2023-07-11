@@ -3,25 +3,25 @@ import { createSlice } from "@reduxjs/toolkit";
 const modalSlice = createSlice({
     name: "modal",
     initialState: {
-        createAim: false,
-        refillAim: false,
-        income: false,
-        expense: false,
+        createAimModal: false,
+        refillAimModal: false,
+        incomeModal: false,
+        expenseModal: false,
     },
     reducers: {
-        create(state) {
+        openCreate(state) {
             state.createAim = true
         },
-        refill(state) {
+        openRefill(state) {
             state.refillAim = true
         },
-        income(state) {
+        openIncome(state) {
             state.income = true
         },
-        expense(state) {
+        openExpense(state) {
             state.expense = true
         },
-        close(state) {
+        closeAll(state) {
             state.createAim = false
             state.refillAim = false
             state.income = false
@@ -31,4 +31,4 @@ const modalSlice = createSlice({
 })
 
 export default modalSlice.reducer
-export const {create, refill, income, expense, close} = modalSlice.actions
+export const {openCreate, openRefill, openIncome, openExpense, closeAll} = modalSlice.actions

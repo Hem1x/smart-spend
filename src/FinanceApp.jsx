@@ -23,9 +23,9 @@ const FinanceApp = () => {
     return (
         <div> 
             {isRefill && <InvestAimModal title='Дом' />}
-            {createModal && <CreateAimModal title="Создание цели"/>}
-            {income && <InComeExpenseModal title="Доход"/>}
-            {expense && <InComeExpenseModal title="Расход"/>}
+            {createModal && <CreateAimModal title="Создать цель"/>}
+            {income && <InComeExpenseModal title="Доходы"/>}
+            {expense && <InComeExpenseModal title="Расходы"/>}
 
             <div className='bg-primary h-screen flex justify-between'>
                 <LeftSidebar />
