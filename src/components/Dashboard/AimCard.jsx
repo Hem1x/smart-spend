@@ -1,5 +1,4 @@
 import React from 'react'
-import {car} from '../../assets/mainPage'
 import { Link } from 'react-router-dom'
 import { numberWithSpaces } from '../../utils'
 
