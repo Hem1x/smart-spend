@@ -9,18 +9,18 @@ const modalSlice = createSlice({
     },
     reducers: {
         openCreate(state) {
-            state.createAim = true
+            state.createAimModal = true
         },
         openIncome(state) {
-            state.income = true
+            state.incomeModal = true
         },
         openExpense(state) {
-            state.expense = true
+            state.expenseModal = true
         },
         closeAll(state) {
-            state.createAim = false
-            state.income = false
-            state.expense = false
+            state.createAimModal = false
+            state.incomeModal = false
+            state.expenseModal = false
         }
     }
 })

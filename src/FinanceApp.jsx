@@ -14,9 +14,9 @@ import CreateAimModal from './components/Modals/CreateAimModal'
 import InComeExpenseModal from './components/Modals/InComeExpenseModal'
 
 const FinanceApp = () => {
-    const createModal = useSelector(state => state.modal.createAim)
-    const income = useSelector(state => state.modal.income)
-    const expense = useSelector(state => state.modal.expense)
+    const createModal = useSelector(state => state.modal.createAimModal)
+    const income = useSelector(state => state.modal.incomeModal)
+    const expense = useSelector(state => state.modal.expenseModal)
 
     return (
         <div> 

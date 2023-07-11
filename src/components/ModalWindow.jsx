@@ -8,11 +8,11 @@ const ModalWindow = ({title, width, children, ...props}) => {
     const dispatch = useDispatch()
 
     const handleClose = () => {
-        if({...props}) {
+        if({...props}.id) {
             dispatch(closeModalForm({...props}.id))
         } else {
             dispatch(closeAll())
-        }
+        }        
     }
 
     return (
