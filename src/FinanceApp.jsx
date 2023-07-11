@@ -30,9 +30,9 @@ const FinanceApp = () => {
                 <LeftSidebar />
 
                 <Routes>
-                    <Route path='/dashboard' element={<Dashboard />}/>
-                    <Route path='/budget' element={<Budget />}/>
-                    <Route path='/advices' element={<Advices />}/>
+                    <Route path='dashboard' element={<Dashboard />}/>
+                    <Route path='budget' element={<Budget />}/>
+                    <Route path='advices' element={<Advices />}/>
                     <Route path='advices/:id' element={<AdvicePage />}/>
                 </Routes>
 
