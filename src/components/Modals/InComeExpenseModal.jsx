@@ -30,6 +30,7 @@ const InComeExpenseModal = ({title}) => {
         }
         dispatch(closeAll())
     }
+    
 
     return (
         <>

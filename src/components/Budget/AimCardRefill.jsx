@@ -37,12 +37,23 @@ const AimCardRefill = ({aim}) => {
 
                     {/* Собрано */}
                     <div className="text-white text-xl text-center mb-4">
-                        <p>Накоплено</p>
-                        <h1 className="font-light">{numberWithSpaces(aim.collectedSum)} рублей</h1>
+                        <p className='flex justify-between'>
+                            <span>Необходимо: </span>
+                            <span>{numberWithSpaces(aim.nessarySum)} ₽</span>
+                        </p>
+                        <h1 className='flex justify-between font-light'>
+                            <span>Собрано: </span>
+                            <span>{numberWithSpaces(aim.collectedSum)} ₽</span>
+                        </h1>
                     </div>
 
                     {/* Пополнить */}
-                    <button onClick={() => dispatch(openModalForm(aim.id))} className='bg-yellowBtn text-black font-semibold rounded-xl px-10 py-2'>Пополнить</button>
+                    <button
+                        onClick={() => dispatch(openModalForm(aim.id))} 
+                        className='bg-yellowBtn text-black font-semibold rounded-xl px-10 py-2 hover:bg-yellow-300 transition-all duration-200'
+                    >
+                        Пополнить
+                    </button>
                 </div>
             </div>
         </>

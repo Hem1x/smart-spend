@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { refillAim, closeModalForm } from '../../features/Aims/aimSlice'
 import { decreaseBalance } from '../../features/Finances/financeSlice'
 import { addTransaction } from '../../features/History/historySlice'
+import { addExpense } from '../../features/Finances/financeSlice'
 
 const InvestAimModal = ({aim}) => {
   const dispatch = useDispatch()
@@ -18,6 +19,7 @@ const InvestAimModal = ({aim}) => {
     if(value > 0 && value <= balance && error === '') {
       dispatch(refillAim({id: aim.id, sum: value}))
       dispatch(decreaseBalance(value))
+      dispatch(addExpense(Number(value)))
       dispatch(addTransaction({
         name: aim.name, 
         sum: value, 
@@ -41,9 +43,9 @@ const InvestAimModal = ({aim}) => {
           
           <button
               type='submit'
-              className='bg-yellowBtn w-full py-2 font-semibold text-xl text-black rounded-full mb-3'
+              className='bg-yellowBtn w-full py-2 font-semibold text-xl text-black rounded-full mb-3  hover:scale-105 transition-all duration-200'
           >
-              Отложить
+              Пополнить
           </button>
 
           {!!error.length && <p className='text-red-600 text-center'>{error}</p>}

@@ -14,7 +14,7 @@ const AimCard = ({aim}) => {
                 </div>
 
                 <div className="mb-5">
-                    <img src={car} className="w-full" alt='aim'/>
+                    <img src={aim.image} className="w-full" alt='aim'/>
                 </div>
 
                 <div className="mb-4 rounded-full overflow-hidden h-10 relative">

@@ -1,6 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from 'uuid'
-import {car} from '../../assets/mainPage'
+import { car, home, vacation } from "../../assets";
+
+const imageObj = {
+    home,
+    vacation,
+    car,
+}
 
 const aimSlice = createSlice({
     name: "aim",
@@ -10,10 +16,27 @@ const aimSlice = createSlice({
             const aimObj = {
                 id: uuidv4(),
                 name: action.payload.name,
-                image: car,
                 nessarySum: action.payload.nessarySum,
                 collectedSum: 0,
                 isModalFormActive: false
+            }
+
+            switch (action.payload.name.toLowerCase()) {
+                case 'отдых': {
+                    aimObj['image'] = imageObj.vacation
+                    break
+                }
+                case 'дом': {
+                    aimObj['image'] = imageObj.home
+                    break
+                }
+                case 'машина': {
+                    aimObj['image'] = imageObj.car
+                    break
+                }
+                default: {
+                    aimObj['image'] = imageObj.car
+                }
             }
 
             state.push(aimObj)

@@ -5,7 +5,6 @@ import dashboard from './dashboard.svg'
 import news from './news.svg'
 import incomeIcon from './incomeIcon.svg'
 import outgoingIcon from './outgoingIcon.svg'
-import car from './car.svg'
 import home from './home.svg'
 import watch from './watch.svg'
 import adviceImage from './adviceImage.svg'
@@ -19,7 +18,6 @@ export {
     news,
     incomeIcon,
     outgoingIcon,
-    car,
     home,
     watch,
     adviceImage,
