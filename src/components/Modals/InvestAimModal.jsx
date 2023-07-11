@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ModalWindow from '../ModalWindow'
+import { useSelector, useDispatch } from 'react-redux'
 
 const InvestAimModal = ({title}) => {
+  const balance = useSelector(state => state.finance.income) - useSelector(state => state.finance.expense)
+  const [value, setValue] = useState(0)
+  const IsBalanceNegative = balance <= 0
+
+  // const refill = (e, id) => {
+
+  // }
+
   return (
     <ModalWindow title={title} width='352px'>
       <form>

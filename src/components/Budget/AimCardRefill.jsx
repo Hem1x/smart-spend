@@ -4,7 +4,7 @@ import {openRefill} from '../../features/Modal/modalSlice'
 
 const AimCardRefill = ({aim}) => {
     const dispatch = useDispatch()
-    const progressBarState = ((aim.collectedSum / aim.collectedSum) * 100).toFixed(0)
+    const progressBarState = ((aim.collectedSum / aim.nessarySum) * 100).toFixed(0)
 
     return (
         <div>
