@@ -1,33 +1,34 @@
-import { createReducer } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import {v4 as uuidv4} from "uuid"
 
 const months = [
-    "Январь",
-    "Февраль",
-    "Март",
-    "Апрель",
-    "Май",
-    "Июнь",
-    "Июль",
-    "Август",
-    "Сентябрь",
-    "Октябрь",
-    "Ноябрь",
-    "Декабрь"
+    "Января",
+    "Февраля",
+    "Марта",
+    "Апреля",
+    "Мая",
+    "Июня",
+    "Июля",
+    "Августа",
+    "Сентября",
+    "Октября",
+    "Ноября",
+    "Декабря"
 ];
 
-const historySlice = createReducer({
+const historySlice = createSlice({
     name: "history",
     initialState: [],
     reducers: {
         addTransaction(state, action) {
             const transactionObj = {
                 id: uuidv4(),
-                name: action.name,
-                sum: action.sum,
+                type: action.payload.type,
+                name: action.payload.name,
+                sum: action.payload.sum,
                 date: {
                     day: new Date().getDate(),
-                    month: new Date().getMonth() + 1,
+                    month: months[Number(new Date().getMonth()) + 1],
                     hours: new Date().getHours(),
                     minutes: new Date().getMinutes()
                 }
@@ -37,3 +38,6 @@ const historySlice = createReducer({
         }
     }
 })
+
+export default historySlice.reducer
+export const {addTransaction} = historySlice.actions

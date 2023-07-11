@@ -1,0 +1,38 @@
+import React from 'react'
+import { incomeIcon, outgoingIcon } from '../assets/mainPage'
+import { numberWithSpaces } from '../utils'
+
+const Transaction = ({tranc}) => {
+  if(tranc === undefined) {
+    return
+  }
+
+  const trancObj = tranc.type === 'INCOME' ? {
+    color: 'text-income',
+    sign: '+',
+    image: incomeIcon,
+  } : {
+    color: 'text-outgoing',
+    sign: '-',
+    image: outgoingIcon,
+  }
+
+  const hours = tranc.date.hours <= 9 ? '0' + tranc.date.hours : tranc.date.hours
+  const minutes = tranc.date.minutes <= 9 ? '0' + tranc.date.minutes : tranc.date.minutes
+
+  return (
+    <li className='flex justify-around items-center shadow-sm mb-6'>
+        <img src={trancObj.image} alt="income icon" />
+        <div className='text-left'>
+            <h1 className={`${trancObj.color} font-bold text-xl`}>{tranc.name}</h1>
+            <p className='text-sm opacity-50'>{tranc.date.day} {tranc.date.month.toLowerCase()}, {hours}:{minutes}</p>
+        </div>
+        <div className={`text-right ${trancObj.color}`}>
+            <h1 className='font-bold text-xl'>{trancObj.sign} {numberWithSpaces(tranc.sum)}</h1>
+            <p>RUB</p>
+        </div>
+    </li>
+  )
+}
+
+export default Transaction

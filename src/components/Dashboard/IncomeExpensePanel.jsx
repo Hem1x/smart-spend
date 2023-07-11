@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import {openIncome, openExpense} from '../../features/Modal/modalSlice'
+import { openIncome, openExpense } from '../../features/Modal/modalSlice'
 import { numberWithSpaces } from '../../utils'
 
 const IncomeExpensePanel = ({title}) => {

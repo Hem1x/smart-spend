@@ -3,6 +3,7 @@ import ModalWindow from '../ModalWindow'
 import { useDispatch } from 'react-redux'
 import { addExpense, addIncome, increaseBalance, decreaseBalance } from '../../features/Finances/financeSlice'
 import { closeAll } from '../../features/Modal/modalSlice'
+import { addTransaction } from '../../features/History/historySlice'
 
 const InComeExpenseModal = ({title}) => {
     const [value, setValue] = useState('')
@@ -13,9 +14,19 @@ const InComeExpenseModal = ({title}) => {
         if (title === 'Доходы') {
             dispatch(addIncome(Number(value)))
             dispatch(increaseBalance(Number(value)))
+            dispatch(addTransaction({
+                name: "Доход", 
+                sum: value, 
+                type: "INCOME"
+            }))
         } else {
             dispatch(addExpense(Number(value)))
             dispatch(decreaseBalance(Number(value)))
+            dispatch(addTransaction({
+                name: "Расход", 
+                sum: value, 
+                type: "EXPENSE"
+            }))
         }
         dispatch(closeAll())
     }
