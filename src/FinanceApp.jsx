@@ -26,7 +26,6 @@ const FinanceApp = () => {
             {createModal && <CreateAimModal title="Создать цель"/>}
             {income && <InComeExpenseModal title="Доходы"/>}
             {expense && <InComeExpenseModal title="Расходы"/>}
-
             <div className='bg-primary h-screen flex justify-between'>
                 <LeftSidebar />
 

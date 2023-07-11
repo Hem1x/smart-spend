@@ -3,5 +3,5 @@ import smallCross from './smallCross.svg'
 
 export {
     bigCross,
-    smallCross
+    smallCross,
 }

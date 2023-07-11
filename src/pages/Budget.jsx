@@ -1,10 +1,11 @@
 import React from 'react'
 import AimCardRefill from '../components/Budget/AimCardRefill'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import {openCreate} from '../features/Modal/modalSlice'
 
 const Budget = () => {
   const dispatch = useDispatch()
+  const aims = useSelector(state => state.aim)
 
   return (
     <div className='p-8 flex-1'>
@@ -19,12 +20,7 @@ const Budget = () => {
 
         {/* Список финансовых целей */}
         <div className='flex flex-wrap justify-evenly gap-8'>
-            <AimCardRefill />
-            <AimCardRefill />
-            <AimCardRefill />
-            <AimCardRefill />
-            <AimCardRefill />
-            <AimCardRefill />
+            {aims.map(aim => <AimCardRefill key={aim.id} aim={aim}/>)}
         </div>
     </div>
   )

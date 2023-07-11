@@ -1,33 +1,37 @@
 import React from 'react'
-import {car} from '../../assets/mainPage'
 import { useDispatch } from 'react-redux'
 import {openRefill} from '../../features/Modal/modalSlice'
 
-const AimCardRefill = () => {
+const AimCardRefill = ({aim}) => {
     const dispatch = useDispatch()
+    const progressBarState = ((aim.collectedSum / aim.collectedSum) * 100).toFixed(0)
 
     return (
         <div>
             <div className="w-[352px] bg-secondary rounded-3xl p-6 shadow-blockShadow flex flex-col">
                 {/* Название */}
                 <div className="text-white text-2xl font-bold text-center mb-2">
-                    <p>Ferrari 458 Italia</p>
+                    <p>{aim.name}</p>
                 </div>
 
                 {/* Фото */}
                 <div className="h-36 mb-6">
-                    <div className="image bg-cover h-36 w-full rounded-xl" style={{ backgroundImage: `url(${car})` }}></div>
+                    <div className="image bg-cover h-36 w-full rounded-xl" style={{ backgroundImage: `url(${aim.image})` }}></div>
                 </div>
 
                 {/* Прогресс бар */}
                 <div className="mb-4 rounded-full overflow-hidden h-5 relative">
                     <div className="bg-white h-full"></div>
-                    <div className="absolute left-0 top-0 h-full bg-green-500 w-1/2 rounded-full"></div>
+                    <div 
+                        className="absolute left-0 top-0 h-full bg-green-500 rounded-full"
+                        style={{width: `${progressBarState}%`}}
+                    >
+                    </div>
                 </div>
 
                 {/* Собрано */}
                 <div className="text-white text-xl text-center mb-4">
-                    <h1 className="font-light">Собрано: <span>8 043 345 ₽</span></h1>
+                    <h1 className="font-light">Собрано: <span>{aim.collectedSum} ₽</span></h1>
                 </div>
 
                 {/* Пополнить */}
