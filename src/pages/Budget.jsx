@@ -14,7 +14,7 @@ const Budget = () => {
           {/* Хедер (Название раздела + Кнопка) */}
           <div className='flex justify-between mb-11'>
               {/* Название */}
-              <h1 className='text-5xl font-bold'>Бюджетирование</h1>
+              <h1 className='text-4xl xl:text-5xl font-bold'>Бюджетирование</h1>
 
               {/* Создать цель */}
               {!(aims.length === 3) &&

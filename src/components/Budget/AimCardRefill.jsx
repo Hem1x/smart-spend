@@ -14,15 +14,15 @@ const AimCardRefill = ({aim}) => {
             {aim.isModalFormActive && <InvestAimModal aim={aim} />}
 
             <div>
-                <div className="w-[348px] bg-secondary rounded-3xl p-6 shadow-blockShadow flex flex-col">
+                <div className="w-[262px] xl:w-[352px] bg-secondary rounded-3xl p-3 px-3 xl:p-7 shadow-blockShadow flex flex-col">
                     {/* Название */}
-                    <div className="text-white text-2xl font-bold text-center mb-2">
+                    <div className="text-white text-2xl xl:text-3xl font-bold text-center mb-2">
                         <p>{aim.name}</p>
                     </div>
 
                     {/* Фото */}
-                    <div className="h-36 mb-6">
-                        <div className="image bg-cover h-36 w-full rounded-xl" style={{ backgroundImage: `url(${aim.image})` }}></div>
+                    <div className="mb-3 xl:mb-6">
+                        <img className='my-0 m-auto w-52 rounded-xl' src={aim.image} alt="img" />
                     </div>
 
                     {/* Прогресс бар */}
@@ -36,12 +36,12 @@ const AimCardRefill = ({aim}) => {
                     </div>
 
                     {/* Собрано */}
-                    <div className="text-white text-xl text-center mb-4">
+                    <div className="text-white text-lg xl:text-xl text-center mb-4">
                         <p className='flex justify-between'>
-                            <span>Необходимо: </span>
+                            <span>Необходимо:&nbsp;&nbsp;</span>
                             <span>{numberWithSpaces(aim.nessarySum)} ₽</span>
                         </p>
-                        <h1 className='flex justify-between font-light'>
+                        <h1 className='flex justify-between font-light text-yellow-100'>
                             <span>Собрано: </span>
                             <span>{numberWithSpaces(aim.collectedSum)} ₽</span>
                         </h1>
@@ -50,7 +50,7 @@ const AimCardRefill = ({aim}) => {
                     {/* Пополнить */}
                     <button
                         onClick={() => dispatch(openModalForm(aim.id))} 
-                        className='bg-yellowBtn text-black font-semibold rounded-xl px-10 py-2 hover:bg-yellow-300 transition-all duration-200'
+                        className='bg-yellowBtn text-black font-semibold rounded-xl px-10 py-2 hover:bg-yellow-500 transition-all duration-200'
                     >
                         Пополнить
                     </button>

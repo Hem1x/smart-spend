@@ -25,7 +25,7 @@ const AnnonceBlockNews = () => {
 
   return (
     <div className='flex justify-between items-center px-8 py-5 bg-white text-black rounded-xl shadow-blockShadow'>
-        <h1 className='text-2xl font-medium'>{advices[(Math.random() * 19).toFixed(0)]}</h1>
+        <h1 className='text-xl xl:text-2xl font-medium'>{advices[(Math.random() * 19).toFixed(0)]}</h1>
     </div>
   )
 }
