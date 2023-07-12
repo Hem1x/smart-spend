@@ -2,7 +2,12 @@
 
 Веб-приложение для планирования финансов и управления бюджетом:
 
+## Демонстрация работы
+
+![Animated GIF](./demo.gif)
+
 ## Технологии
+
 ![HTML](https://img.shields.io/badge/HTML-000?style=for-the-badge&logo=html5)
 ![CSS](https://img.shields.io/badge/CSS-000?style=for-the-badge&logo=CSS3&logoColor=1572B6)
 ![JavaScript](https://img.shields.io/badge/JavaScript-000?style=for-the-badge&logo=Javascript)
@@ -10,8 +15,6 @@
 ![Redux](https://img.shields.io/badge/Redux-000?style=for-the-badge&logo=redux)
 ![SASS](https://img.shields.io/badge/SASS-000?style=for-the-badge&logo=SASS)
 ![Tailwind](https://img.shields.io/badge/Tailwind%20CSS-000?style=for-the-badge&logo=tailwindcss)
-
-
 
 ## Запуск проекта
 
@@ -34,5 +37,7 @@ npm install
 ```
 npm start
 ```
+
 ## Ссылка на проект
+
 https://smart-spend-pi.vercel.app/dashboard
