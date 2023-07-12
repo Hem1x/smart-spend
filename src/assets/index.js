@@ -4,6 +4,9 @@ import home from './home.jpg'
 import vacation from './vacation.jpg'
 import car from './car.jpg'
 import history from './history.svg'
+import menu from './menu.svg'
+import close from './close.svg'
+import smallLogo from './smallLogo.svg'
 
 export {
     bigCross,
@@ -11,5 +14,8 @@ export {
     home,
     vacation,
     car,
-    history
+    history,
+    menu,
+    close,
+    smallLogo
 }

@@ -33,10 +33,7 @@ const historySlice = createSlice({
                     minutes: new Date().getMinutes()
                 }
             }
-
-            if(state.length > 3) {
-                state.shift()
-            }
+            
             state.push(transactionObj)
         }
     }

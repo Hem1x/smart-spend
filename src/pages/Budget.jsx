@@ -14,7 +14,7 @@ const Budget = () => {
           {/* Хедер (Название раздела + Кнопка) */}
           <div className='flex justify-between mb-11'>
               {/* Название */}
-              <h1 className='text-4xl xl:text-5xl font-bold'>Бюджетирование</h1>
+              <h1 className='text-2xl lg:text-4xl xl:text-5xl font-bold'>Бюджетирование</h1>
 
               {/* Создать цель */}
               {!(aims.length === 3) &&
@@ -29,12 +29,12 @@ const Budget = () => {
           </div>
 
           {/* Список финансовых целей */}
-          <div className='flex justify-evenly gap-8'>
+          <div className='flex flex-wrap justify-evenly gap-8'>
               {
                 aims.length ? 
                   aims.map(aim => <AimCardRefill key={aim.id} aim={aim}/>) 
                   : 
-                  <h1 className='mt-40 text-3xl font-semibold opacity-50'>У нас нет финансовых целей</h1>
+                  <h1 className='mt-40 text-xl lg:text-3xl font-semibold opacity-50'>У нас нет финансовых целей</h1>
               }
           </div>
       </div>

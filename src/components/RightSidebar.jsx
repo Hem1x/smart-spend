@@ -8,7 +8,7 @@ const RightSidebar = () => {
     const transactionList = useSelector(state => state.history)
 
     return (
-        <div className='hidden lg:block w-fit relative bg-secondary text-white text-center px-5 xl:px-7 pt-5 xl:pt-8'>
+        <div className='hidden lg:block w-fit relative bg-secondary text-white text-center px-5 xl:px-7 pt-5 xl:pt-8 overflow-auto'>
             {/* Гость */}
             <div className='bg-primary px-16 xl:px-24 py-4 rounded-xl mb-7'>
                 <div className='flex flex-col items-center'>
@@ -31,6 +31,7 @@ const RightSidebar = () => {
                     </TransitionGroup>
                 </div>
             </div>
+
         </div>
     )
 }

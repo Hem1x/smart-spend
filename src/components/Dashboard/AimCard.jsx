@@ -7,7 +7,7 @@ const AimCard = ({aim}) => {
 
     return (
         <Link to="/budget">
-            <div className="bg-secondary rounded-3xl p-3 px-5 xl:p-7 shadow-blockShadow hover:shadow-blockShadowHover transition-all duration-300">
+            <div className="w-72 lg:w-auto bg-secondary rounded-3xl p-3 px-5 xl:p-7 shadow-blockShadow hover:shadow-blockShadowHover transition-all duration-300">
                 <div className="titleBlock text-white text-2xl xl:text-3xl font-bold text-center mb-2 xl:mb-6">
                     <p>{aim.name}</p>
                 </div>

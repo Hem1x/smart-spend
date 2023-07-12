@@ -13,13 +13,13 @@ const Dashboard = () => {
       <div className='p-8 flex-1'>
 
         {/* Секция Доходы/Расходы */}
-        <div className='flex justify-between gap-8 mb-5 xl:mb-10'>
+        <div className='flex flex-wrap lg:flex-nowrap justify-between gap-8 mb-5 xl:mb-10'>
           <IncomeExpensePanel title="Доходы"/>
           <IncomeExpensePanel title="Расходы"/>
         </div>
 
         {/* Список финансовых целей */}
-        <div className='flex justify-between gap-8 mb-5 xl:mb-10'>
+        <div className='flex flex-wrap lg:flex-nowrap justify-center lg:justify-between gap-8 mb-5 xl:mb-10'>
           {aims.map(aim => <AimCard aim={aim}/>) }
         </div>
 
