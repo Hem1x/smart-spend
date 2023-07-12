@@ -14,7 +14,7 @@ const AimCardRefill = ({aim}) => {
             {aim.isModalFormActive && <InvestAimModal aim={aim} />}
 
             <div>
-                <div className="w-[262px] xl:w-[352px] bg-secondary rounded-3xl p-3 px-3 xl:p-7 shadow-blockShadow flex flex-col">
+                <div className=" bg-secondary rounded-3xl p-3 px-3 xl:p-7 shadow-blockShadow flex flex-col">
                     {/* Название */}
                     <div className="text-white text-2xl xl:text-3xl font-bold text-center mb-2">
                         <p>{aim.name}</p>
@@ -37,11 +37,11 @@ const AimCardRefill = ({aim}) => {
 
                     {/* Собрано */}
                     <div className="text-white text-lg xl:text-xl text-center mb-4">
-                        <p className='flex justify-between'>
+                        <p className='hidden lg:flex lg:flex-wrap lg:justify-center xl:justify-between mb-3'>
                             <span>Необходимо:&nbsp;&nbsp;</span>
                             <span>{numberWithSpaces(aim.nessarySum)} ₽</span>
                         </p>
-                        <h1 className='flex justify-between font-light text-yellow-100'>
+                        <h1 className='flex flex-wrap justify-between font-light text-yellow-100'>
                             <span>Собрано: </span>
                             <span>{numberWithSpaces(aim.collectedSum)} ₽</span>
                         </h1>

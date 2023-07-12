@@ -29,7 +29,7 @@ const Budget = () => {
           </div>
 
           {/* Список финансовых целей */}
-          <div className='flex flex-wrap justify-evenly gap-8'>
+          <div className='flex justify-evenly gap-8'>
               {
                 aims.length ? 
                   aims.map(aim => <AimCardRefill key={aim.id} aim={aim}/>) 
