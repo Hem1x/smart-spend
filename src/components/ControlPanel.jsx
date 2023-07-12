@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { numberWithSpaces } from '../utils'
+import { numberWithSpaces } from '../utils' 
 import {dashboard, budget, news} from '../assets/mainPage'
 import { history } from '../assets'
 

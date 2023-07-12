@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import {MotionConfig} from 'framer-motion'

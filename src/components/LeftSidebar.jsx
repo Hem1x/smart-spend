@@ -6,10 +6,6 @@ import ControlPanel from './ControlPanel'
 const LeftSidebar = ({isMenuActive, setIsMenuActive}) => {
 
     const hadnleClose = () => {
-        if(window.innerHeight >= 768) {
-            return
-        }
-
         setIsMenuActive(false)
     }
 
