@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import {MotionConfig} from 'framer-motion'
@@ -24,6 +24,7 @@ const FinanceApp = () => {
     const expense = useSelector(state => state.modal.expenseModal)
 
     const location = useLocation()
+
     return (
         <div> 
             {createModal && <CreateAimModal title="Создать цель"/>}

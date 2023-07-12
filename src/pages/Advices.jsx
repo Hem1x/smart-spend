@@ -8,9 +8,9 @@ const Advices = () => {
 
   return (
       <AnimatedPage>
-        <div className='p-8'>
+        <div className='p-3 sm:p-8'>
           {/* Хедер */}
-          <div className='flex justify-between mb-6 xl:mb-11'>
+          <div className='flex justify-center sm:justify-between mb-4 sm:mb-6 xl:mb-11'>
               {/* Название */}
               <h1 className='text-2xl lg:text-4xl xl:text-5xl drop-shadow-xl shadow-black font-bold'>База знаний</h1>
           </div>

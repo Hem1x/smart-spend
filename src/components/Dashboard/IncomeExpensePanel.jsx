@@ -34,13 +34,13 @@ const IncomeExpensePanel = ({title}) => {
 
             {/* Ячейка */}
             <div className="flex items-center justify-between w-full bg-white bg-opacity-60 rounded-3xl p-2 xl:p-4 shadow-blockShadow">
-                <div className="text-xl lg:text-2xl xl:text-3xl font-semibold text-white ml-2 mb-4 lg:mb-0">
+                <div className="text-xl lg:text-2xl xl:text-3xl font-semibold text-white ml-2 mb-0 sm:mb-4 lg:mb-0">
                     <span className='drop-shadow-textShadow'>{numberWithSpaces(objectPanel.sum)} ₽</span>
                 </div>
 
                 <button
                     onClick={() => dispatch(objectPanel.open())} 
-                    className={`w-12 h-12 ${objectPanel.color} rounded-full flex items-center justify-center shadow transition-all hover:scale-105 ${objectPanel.colorAnimation}`}
+                    className={`w-7 h-7 sm:w-12 sm:h-12 ${objectPanel.color} rounded-full flex items-center justify-center shadow transition-all hover:scale-105 ${objectPanel.colorAnimation}`}
                 >
                     +
                 </button>

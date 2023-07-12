@@ -5,8 +5,9 @@ import { numberWithSpaces } from '../utils'
 import {dashboard, budget, news} from '../assets/mainPage'
 import { history } from '../assets'
 
-const ControlPanel = () => {
+const ControlPanel = ({setIsMenuActive, hadnleClose}) => {
     const balance = useSelector(state => state.finance.balance)
+
   return (
     <div>
             {/* balance */}
@@ -17,22 +18,22 @@ const ControlPanel = () => {
 
             {/* control panel */}
             <div className='flex flex-col gap-6 text-md xl:text-xl font-light'>
-                <NavLink to='/dashboard' className='sidebar-link'>
+                <NavLink to='/dashboard' className='sidebar-link' onClick={hadnleClose}>
                     <img className='mr-3 xl:mr-4' src={dashboard} alt="dashboard" />
                     <h2>Панель управления</h2>
                 </NavLink>
 
-                <NavLink to='/budget' className='sidebar-link'>
+                <NavLink to='/budget' className='sidebar-link' onClick={hadnleClose}>
                     <img className='mr-3 xl:mr-4' src={budget} alt="budget" />
                     <h2>Бюджетирование</h2>
                 </NavLink>
 
-                <NavLink to='/advices' className='sidebar-link'>
+                <NavLink to='/advices' className='sidebar-link' onClick={hadnleClose}>
                     <img className='mr-3 xl:mr-4' src={news} alt="news" />
                     <h2>Новостной блог</h2>
                 </NavLink>
 
-                <NavLink to='/history' className='block lg:hidden sidebar-link'>
+                <NavLink to='/history' className='block lg:hidden sidebar-link' onClick={hadnleClose}>
                     <img className='mr-3 xl:mr-4' src={history} alt="news" />
                     <h2>История</h2>
                 </NavLink>

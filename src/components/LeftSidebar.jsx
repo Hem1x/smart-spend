@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import {logo} from '../assets/mainPage'
 import { close, smallLogo  } from '../assets'
 import ControlPanel from './ControlPanel'
@@ -7,6 +6,10 @@ import ControlPanel from './ControlPanel'
 const LeftSidebar = ({isMenuActive, setIsMenuActive}) => {
 
     const hadnleClose = () => {
+        if(window.innerHeight >= 768) {
+            return
+        }
+
         setIsMenuActive(false)
     }
 
@@ -19,7 +22,7 @@ const LeftSidebar = ({isMenuActive, setIsMenuActive}) => {
                 <img className='hidden sm:block mb-7 m-auto my-0 w-56 xl:w-72' src={logo} alt="logo" />
             </div>
 
-            <ControlPanel />
+            <ControlPanel setIsMenuActive={setIsMenuActive} hadnleClose={hadnleClose}/>
         </div>
 
     )
