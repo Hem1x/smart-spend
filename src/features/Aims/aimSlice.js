@@ -44,6 +44,9 @@ const aimSlice = createSlice({
         refillAim(state, action) {
             state.map(aim => aim.id === action.payload.id ? aim.collectedSum += Number(action.payload.sum) : aim)
         },
+        deleteAim(state, action) {
+            return state.filter(aim => aim.id !== action.payload)
+        },
         openModalForm(state, action) {
             state.map(aim => aim.id === action.payload ? aim.isModalFormActive = true : aim)
         },
@@ -54,4 +57,4 @@ const aimSlice = createSlice({
 })
 
 export default aimSlice.reducer
-export const {addAim, refillAim, openModalForm, closeModalForm} = aimSlice.actions
+export const {addAim, refillAim, openModalForm, closeModalForm, deleteAim} = aimSlice.actions

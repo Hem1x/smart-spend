@@ -5,13 +5,13 @@ import aimSlice from "../features/Aims/aimSlice";
 import adviceSlice from "../features/Advices/adviceSlice";
 import historySlice from "../features/History/historySlice";
 
-const localStorageMiddleware = (store) => (next) => (action) => {
-    next(action);
-    localStorage.setItem('reduxState', JSON.stringify(store.getState()));
-};
+// const localStorageMiddleware = (store) => (next) => (action) => {
+//     next(action);
+//     localStorage.setItem('reduxState', JSON.stringify(store.getState()));
+// };
 
-const savedState = localStorage.getItem('reduxState');
-const preloadedState = savedState ? JSON.parse(savedState) : undefined;
+// const savedState = localStorage.getItem('reduxState');
+// const preloadedState = savedState ? JSON.parse(savedState) : undefined;
 
 const rootReduxcer = combineReducers({
     modal: modalSlice,
@@ -23,8 +23,8 @@ const rootReduxcer = combineReducers({
 
 export const store = configureStore({
     reducer: rootReduxcer,
-    middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware().concat(localStorageMiddleware),
-    preloadedState,
+    // middleware: (getDefaultMiddleware) =>
+    //   getDefaultMiddleware().concat(localStorageMiddleware),
+    // preloadedState,
     devTools: true,
   });

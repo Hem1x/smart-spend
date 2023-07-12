@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { openModalForm } from '../../features/Aims/aimSlice'
+import { openModalForm, deleteAim } from '../../features/Aims/aimSlice'
 import InvestAimModal from '../Modals/InvestAimModal'
 import { numberWithSpaces } from '../../utils'
 
@@ -50,9 +50,15 @@ const AimCardRefill = ({aim}) => {
                     {/* Пополнить */}
                     <button
                         onClick={() => dispatch(openModalForm(aim.id))} 
-                        className='bg-yellowBtn text-black font-semibold rounded-xl px-10 py-2 hover:bg-yellow-500 transition-all duration-200'
+                        className='mb-2 bg-yellowBtn text-black font-semibold rounded-xl px-10 py-2 hover:bg-yellow-500 transition-all duration-200'
                     >
                         Пополнить
+                    </button>
+                    <button
+                        onClick={() => dispatch(deleteAim(aim.id))} 
+                        className='bg-outgoing text-white font-semibold rounded-xl px-10 py-2 hover:bg-red-500 transition-all duration-200'
+                    >
+                        Удалить
                     </button>
                 </div>
             </div>
