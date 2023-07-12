@@ -6,7 +6,9 @@ import ControlPanel from './ControlPanel'
 const LeftSidebar = ({isMenuActive, setIsMenuActive}) => {
 
     const hadnleClose = () => {
-        setIsMenuActive(false)
+        if(window.innerWidth < 768) {
+            setIsMenuActive(false)
+        }
     }
 
     return (
