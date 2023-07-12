@@ -28,7 +28,7 @@ const historySlice = createSlice({
                 sum: action.payload.sum,
                 date: {
                     day: new Date().getDate(),
-                    month: months[Number(new Date().getMonth()) + 1],
+                    month: months[Number(new Date().getMonth())],
                     hours: new Date().getHours(),
                     minutes: new Date().getMinutes()
                 }
