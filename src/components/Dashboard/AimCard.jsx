@@ -1,13 +1,21 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { numberWithSpaces } from '../../utils'
+import { useDispatch } from 'react-redux'
+import { openModalForm } from '../../features/Aims/aimSlice'
+import InvestAimModal from '../Modals/InvestAimModal'
 
 const AimCard = ({aim}) => {
     const progressBarState = ((aim.collectedSum / aim.nessarySum) * 100).toFixed(0)
+    const dispatch = useDispatch()
 
     return (
-        <Link to="/budget">
-            <div className="w-full sm:w-72 lg:w-auto bg-secondary rounded-3xl p-3 px-5 xl:p-7 shadow-blockShadow hover:shadow-blockShadowHover transition-all duration-300">
+        <>
+            {aim.isModalFormActive && <InvestAimModal aim={aim} />}
+
+            <div 
+                className="cursor-pointer w-full sm:w-72 lg:w-auto bg-secondary rounded-3xl p-3 px-5 xl:p-7 shadow-blockShadow hover:shadow-blockShadowHover transition-all duration-300"
+                onClick={() => dispatch(openModalForm(aim.id))}
+            >
                 <div className="titleBlock text-white text-2xl xl:text-3xl font-bold text-center mb-2 xl:mb-6">
                     <p>{aim.name}</p>
                 </div>
@@ -26,7 +34,7 @@ const AimCard = ({aim}) => {
                     <p>{numberWithSpaces(aim.collectedSum)} ₽</p>
                 </div>
             </div>
-        </Link>
+        </>
   )
 }
 

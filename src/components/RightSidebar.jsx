@@ -10,7 +10,7 @@ const RightSidebar = () => {
     return (
         <div className='hidden lg:block w-fit relative bg-secondary text-white text-center px-5 xl:px-7 pt-5 xl:pt-8 overflow-auto'>
             {/* Гость */}
-            <div className='bg-primary px-16 xl:px-24 py-4 rounded-xl mb-7'>
+            <div className='bg-primary px-20 xl:px-24 py-4 rounded-xl mb-7'>
                 <div className='flex flex-col items-center'>
                     <img className="mb-2" src={icon} alt="" />
                     <p className='text-2xl font-bold'>Гость</p>

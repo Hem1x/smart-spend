@@ -83,3 +83,13 @@ body {
     padding: 0;
   }
   
+  ::-webkit-scrollbar-track {
+	background-color: #585A56; /*Цвет скролла*/
+} 
+::-webkit-scrollbar-thumb { 
+	border-radius: 9999px; /*Закругление ползунка*/
+	background-color: #272424; /*Цвет ползунка*/
+} 
+::-webkit-scrollbar { 
+	width: 1px;  /*Толщина скролла*/
+}

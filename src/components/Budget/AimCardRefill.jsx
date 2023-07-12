@@ -3,10 +3,17 @@ import { useDispatch } from 'react-redux'
 import { openModalForm, deleteAim } from '../../features/Aims/aimSlice'
 import InvestAimModal from '../Modals/InvestAimModal'
 import { numberWithSpaces } from '../../utils'
+import { increaseBalance, increaseExpense } from '../../features/Finances/financeSlice'
 
 const AimCardRefill = ({aim}) => {
     const dispatch = useDispatch()
     const progressBarState = ((aim.collectedSum / aim.nessarySum) * 100).toFixed(0)
+
+    const handleDeleteAim = (id, sum) => {
+        dispatch(increaseExpense(sum))
+        dispatch(increaseBalance(sum))
+        dispatch(deleteAim(id))
+    }
     
     return (
         <>
@@ -14,7 +21,7 @@ const AimCardRefill = ({aim}) => {
             {aim.isModalFormActive && <InvestAimModal aim={aim} />}
 
             <div>
-                <div className=" bg-secondary rounded-3xl p-3 px-3 xl:p-7 shadow-blockShadow flex flex-col">
+                <div className=" bg-secondary rounded-3xl p-7 shadow-blockShadow flex flex-col">
                     {/* Название */}
                     <div className="text-white text-2xl xl:text-3xl font-bold text-center mb-2">
                         <p>{aim.name}</p>
@@ -22,7 +29,7 @@ const AimCardRefill = ({aim}) => {
 
                     {/* Фото */}
                     <div className="mb-3 xl:mb-6">
-                        <img className='my-0 m-auto w-52 rounded-xl' src={aim.image} alt="img" />
+                        <img className='my-0 m-auto w-full rounded-xl' src={aim.image} alt="img" />
                     </div>
 
                     {/* Прогресс бар */}
@@ -37,7 +44,7 @@ const AimCardRefill = ({aim}) => {
 
                     {/* Собрано */}
                     <div className="text-white text-lg xl:text-xl text-center mb-4">
-                        <p className='hidden lg:flex lg:flex-wrap lg:justify-center xl:justify-between mb-3'>
+                        <p className='hidden lg:flex lg:flex-wrap justify-between'>
                             <span>Необходимо:&nbsp;&nbsp;</span>
                             <span>{numberWithSpaces(aim.nessarySum)} ₽</span>
                         </p>
@@ -55,7 +62,7 @@ const AimCardRefill = ({aim}) => {
                         Пополнить
                     </button>
                     <button
-                        onClick={() => dispatch(deleteAim(aim.id))} 
+                        onClick={() => handleDeleteAim(aim.id, aim.collectedSum)} 
                         className='bg-outgoing text-white font-semibold rounded-xl px-10 py-2 hover:bg-red-500 transition-all duration-200'
                     >
                         Удалить
