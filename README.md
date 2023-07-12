@@ -42,4 +42,4 @@ npm start
 
 ## Ссылка на проект
 
-https://smart-spend-pi.vercel.app/dashboard
+https://smart-spend-pi.vercel.app
