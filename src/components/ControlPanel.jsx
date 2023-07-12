@@ -18,7 +18,7 @@ const ControlPanel = ({setIsMenuActive, hadnleClose}) => {
 
             {/* control panel */}
             <div className='flex flex-col gap-6 text-md xl:text-xl font-light'>
-                <NavLink to='/dashboard' className='sidebar-link' onClick={hadnleClose}>
+                <NavLink to='/' className='sidebar-link' onClick={hadnleClose}>
                     <img className='mr-3 xl:mr-4' src={dashboard} alt="dashboard" />
                     <h2>Панель управления</h2>
                 </NavLink>

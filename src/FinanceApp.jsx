@@ -38,7 +38,7 @@ const FinanceApp = () => {
                 <div className='overflow-auto flex-1'>
                     <MotionConfig transition={{ duration: .7 }}>
                         <Routes location={location} key={location.pathname}>
-                            <Route path='dashboard' element={<Dashboard />}/>
+                            <Route path='/' element={<Dashboard />}/>
                             <Route path='budget' element={<Budget />}/>
                             <Route path='history' element={<History />}/>
                             <Route path='advices' element={<Advices />}/>
