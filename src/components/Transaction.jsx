@@ -26,12 +26,12 @@ const Transaction = ({tranc}) => {
             <img className='mr-3' src={trancObj.image} alt="income icon" />
 
             <div>
-              <h1 className={`${trancObj.color} font-bold text-xl`}>{tranc.name.split(' ')[0]}</h1>
+              <h1 className={`${trancObj.color} font-bold text-base xl:text-xl`}>{tranc.name.split(' ')[0]}</h1>
               <p className='text-sm opacity-50'>{tranc.date.day} {tranc.date.month.toLowerCase()}, {hours}:{minutes}</p>
             </div>
         </div>
         <div className={`text-right ${trancObj.color}`}>
-            <h1 className='font-bold text-xl'>{trancObj.sign} {numberWithSpaces(tranc.sum)}</h1>
+            <h1 className='font-bold text-base xl:text-xl'>{trancObj.sign} {numberWithSpaces(tranc.sum)}</h1>
             <p>RUB</p>
         </div>
     </li>
