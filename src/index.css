@@ -64,7 +64,7 @@ body {
   .fade-enter-active {
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+    transition: opacity 100ms ease-in, transform 100ms ease-in;
   }
   
   .fade-exit {

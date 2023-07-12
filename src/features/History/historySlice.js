@@ -34,6 +34,9 @@ const historySlice = createSlice({
                 }
             }
 
+            if(state.length > 5) {
+                state.shift()
+            }
             state.push(transactionObj)
         }
     }

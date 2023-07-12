@@ -35,7 +35,7 @@ const InvestAimModal = ({aim}) => {
           <div className='bg-gray-200 py-2 px-5 rounded-full mb-4'>
               <input
                 required 
-                type='number'
+                maxLength={10}
                 onChange={(e) => setValue(e.target.value)}
                 className='bg-transparent w-full' 
                 placeholder='Введите сумму'/>

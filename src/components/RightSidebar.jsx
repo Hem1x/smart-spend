@@ -18,16 +18,14 @@ const RightSidebar = () => {
                 </div>
             </div>
 
-            <p className='text-[26px] font-semibold mb-6'>История действий</p>
+            <p className='text-[26px] font-semibold mb-1'>История действий</p>
 
-            <div className='bg-bgHistory absolute left-0 right-0 px-5'>
-                <div className='mt-6'>
+            <div className='bg-bgHistory w-full relative'>
+                <div className='mt-6 absolute left-0 right-0 top-0'>
                     <TransitionGroup component="ul" className="transaction-list">
                     {transactionList.map((tranc) => (
                         <CSSTransition key={tranc.id} timeout={500} classNames="fade">
-                            <li>
-                                <Transaction tranc={tranc} />
-                            </li>
+                            <Transaction tranc={tranc} />
                         </CSSTransition>
                     ))}
                     </TransitionGroup>

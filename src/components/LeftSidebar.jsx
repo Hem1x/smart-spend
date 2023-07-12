@@ -17,8 +17,8 @@ const LeftSidebar = () => {
 
             {/* balance */}
             <div className='w-72 rounded-xl bg-balance px-5 py-4 text-center mb-[60px]'>
-            <h3 className='text-[20px]'>Ваши средства:</h3>
-            <span className='text-balanceText text-[38px] font-bold'>{numberWithSpaces(balance)} ₽</span>
+                <h3 className='text-[20px] mb-2'>Ваши средства:</h3>
+                <span className='text-balanceText text-3xl font-bold'>{numberWithSpaces(balance)} ₽</span>
             </div>
 
             {/* control panel */}

@@ -23,10 +23,10 @@ const Transaction = ({tranc}) => {
   return (
     <li className='flex justify-between items-center shadow-sm mb-6'>
         <div className='flex text-left'>
-            <img className='mr-4' src={trancObj.image} alt="income icon" />
+            <img className='mr-3' src={trancObj.image} alt="income icon" />
 
             <div>
-              <h1 className={`${trancObj.color} font-bold text-xl`}>{tranc.name}</h1>
+              <h1 className={`${trancObj.color} font-bold text-xl`}>{tranc.name.split(' ')[0]}</h1>
               <p className='text-sm opacity-50'>{tranc.date.day} {tranc.date.month.toLowerCase()}, {hours}:{minutes}</p>
             </div>
         </div>
