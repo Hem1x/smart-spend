@@ -3,6 +3,7 @@ import {logo, dashboard, budget, news} from '../assets/mainPage'
 import { NavLink, Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { numberWithSpaces } from '../utils'
+import { history } from '../assets'
 
 const LeftSidebar = () => {
     const balance = useSelector(state => state.finance.balance)
@@ -36,6 +37,11 @@ const LeftSidebar = () => {
                 <NavLink to='/advices' className='sidebar-link'>
                     <img className='mr-3 xl:mr-4' src={news} alt="news" />
                     <h2>Новостной блог</h2>
+                </NavLink>
+
+                <NavLink to='/history' className='block lg:hidden sidebar-link'>
+                    <img className='mr-3 xl:mr-4' src={history} alt="news" />
+                    <h2>История</h2>
                 </NavLink>
             </div>
         </div>

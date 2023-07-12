@@ -10,6 +10,7 @@ import Dashboard from './pages/Dashboard'
 import Budget from './pages/Budget'
 import Advices from './pages/Advices'
 import AdvicePage from './components/Advice/AdvicePage'
+import History from './pages/History'
 
 import CreateAimModal from './components/Modals/CreateAimModal'
 import InComeExpenseModal from './components/Modals/InComeExpenseModal'
@@ -32,6 +33,7 @@ const FinanceApp = () => {
                     <Routes location={location} key={location.pathname}>
                         <Route path='dashboard' element={<Dashboard />}/>
                         <Route path='budget' element={<Budget />}/>
+                        <Route path='history' element={<History />}/>
                         <Route path='advices' element={<Advices />}/>
                         <Route path='advices/:id' element={<AdvicePage />}/>
                     </Routes>
