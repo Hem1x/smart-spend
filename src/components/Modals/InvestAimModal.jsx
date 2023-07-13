@@ -5,13 +5,14 @@ import { refillAim, closeModalForm } from '../../features/Aims/aimSlice'
 import { decreaseBalance } from '../../features/Finances/financeSlice'
 import { addTransaction } from '../../features/History/historySlice'
 import { addExpense } from '../../features/Finances/financeSlice'
+import { numberWithSpaces } from '../../utils'
 
 const InvestAimModal = ({aim}) => {
   const dispatch = useDispatch()
   const balance = useSelector(state => state.finance.income) - useSelector(state => state.finance.expense)
-  const [value, setValue] = useState(0)
+  const [value, setValue] = useState('')
 
-  const error = balance <= 0 ? 'У вас недостаточно средств' : ''
+  const [error, setError] = useState('');
 
   const refill = (e, value) => {
     e.preventDefault()
@@ -24,21 +25,27 @@ const InvestAimModal = ({aim}) => {
         name: aim.name, 
         sum: value, 
         type: "EXPENSE"
-    }))
+      }))
+      dispatch(closeModalForm(aim.id))
+    } else {
+      setError('У вас недостаточно средств')
     }
-    
-    dispatch(closeModalForm(aim.id))
   }
   return (
     <ModalWindow title={aim.name} width='352px' id={aim.id}>  
       <form onSubmit={(e) => refill(e, value)}>
-          <div className='bg-gray-200 py-2 px-5 rounded-full mb-4'>
+          <div className='bg-gray-200 py-2 px-5 rounded-full mb-4 relative'>
               <input
-                required 
+                required
+                autoFocus
+                type='number'
                 maxLength={10}
                 onChange={(e) => setValue(e.target.value)}
-                className='bg-transparent w-full' 
-                placeholder='Введите сумму'/>
+                className='bg-transparent w-full text-gray-100' 
+                placeholder='Введите сумму'
+              />
+
+              {value && <h1 className='absolute left-4 top-2'>{numberWithSpaces(Number(value))} ₽</h1>}
           </div>
           
           <button
@@ -48,7 +55,7 @@ const InvestAimModal = ({aim}) => {
               Пополнить
           </button>
 
-          {!!error.length && <p className='text-red-600 text-center'>{error}</p>}
+          {error && <p className='text-red-600 text-center'>{error}</p>}
       </form>
     </ModalWindow>
   )

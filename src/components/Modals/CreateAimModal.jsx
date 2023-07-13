@@ -3,13 +3,14 @@ import ModalWindow from '../ModalWindow'
 import { useDispatch } from 'react-redux'
 import { addAim } from '../../features/Aims/aimSlice'
 import { closeAll } from '../../features/Modal/modalSlice'
+import { numberWithSpaces } from '../../utils'
 
 const CreateAimModal = ({title}) => {
     const dispatch = useDispatch()
 
     const [aimObj, setAimObj] = useState({
         name: '',
-        nessarySum: 0,
+        nessarySum: '',
     })
 
     const createAim = (e, aim) => {
@@ -35,14 +36,16 @@ const CreateAimModal = ({title}) => {
                 />
             </div>
 
-            <div className='bg-gray-200 py-2 px-5 rounded-full mb-4'>
+            <div className='bg-gray-200 py-2 px-5 rounded-full mb-4 relative'>
                 <input
                     required
+                    type='number'
                     maxLength={10}
-                    className='bg-transparent w-full' 
+                    className='bg-transparent w-full text-gray-100' 
                     placeholder='Необходимая сумма'
                     onChange={(e) => setAimObj({...aimObj, nessarySum: e.target.value})}
                 />
+                {aimObj.nessarySum && <h1 className='absolute left-4 top-2'>{numberWithSpaces(Number(aimObj.nessarySum))} ₽</h1>}
             </div>
 
             <button

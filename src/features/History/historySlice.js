@@ -35,9 +35,12 @@ const historySlice = createSlice({
             }
             
             state.push(transactionObj)
+        },
+        deleteTransaction(state, action) {
+            return state.filter(tranc => tranc.name !== action.payload)
         }
     }
 })
 
 export default historySlice.reducer
-export const {addTransaction} = historySlice.actions
+export const {addTransaction, deleteTransaction} = historySlice.actions

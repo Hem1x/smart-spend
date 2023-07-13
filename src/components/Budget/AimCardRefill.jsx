@@ -4,15 +4,17 @@ import { openModalForm, deleteAim } from '../../features/Aims/aimSlice'
 import InvestAimModal from '../Modals/InvestAimModal'
 import { numberWithSpaces } from '../../utils'
 import { increaseBalance, increaseExpense } from '../../features/Finances/financeSlice'
+import { deleteTransaction } from '../../features/History/historySlice'
 
 const AimCardRefill = ({aim}) => {
     const dispatch = useDispatch()
     const progressBarState = ((aim.collectedSum / aim.nessarySum) * 100).toFixed(0)
 
-    const handleDeleteAim = (id, sum) => {
+    const handleDeleteAim = (id, sum, name) => {
         dispatch(increaseExpense(sum))
         dispatch(increaseBalance(sum))
         dispatch(deleteAim(id))
+        dispatch(deleteTransaction(name))
     }
     
     return (
@@ -62,7 +64,7 @@ const AimCardRefill = ({aim}) => {
                         Пополнить
                     </button>
                     <button
-                        onClick={() => handleDeleteAim(aim.id, aim.collectedSum)} 
+                        onClick={() => handleDeleteAim(aim.id, aim.collectedSum, aim.name)} 
                         className='bg-outgoing text-white font-semibold rounded-xl px-10 py-2 hover:bg-red-500 transition-all duration-200'
                     >
                         Удалить

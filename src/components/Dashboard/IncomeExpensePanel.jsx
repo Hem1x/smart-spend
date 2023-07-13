@@ -28,9 +28,16 @@ const IncomeExpensePanel = ({title}) => {
     }
 
     return (
-        <div className={`w-full lg:w-1/2 ${objectPanel.color} rounded-3xl p-4 lg:p-6 xl:p-10 shadow-blockShadow ${objectPanel.shadowHover} duration-200 transition-all cursor-pointer`}>
+        <div 
+            className={`w-full lg:w-1/2 ${objectPanel.color} rounded-3xl p-4 lg:p-6 xl:p-10 shadow-blockShadow ${objectPanel.shadowHover} duration-200 transition-all cursor-pointer`}
+            onClick={() => dispatch(objectPanel.open())} 
+        >
             {/* Название */}
-            <h1 className="text-xl lg:text-2xl xl:text-4xl font-bold mb-4 drop-shadow-textShadow">{objectPanel.title}</h1>
+            <h1 
+                className="text-xl lg:text-2xl xl:text-4xl font-bold mb-4 drop-shadow-textShadow"
+            >
+                {objectPanel.title}
+            </h1>
 
             {/* Ячейка */}
             <div className="flex items-center justify-between w-full bg-white bg-opacity-60 rounded-3xl p-2 xl:p-4 shadow-blockShadow">
