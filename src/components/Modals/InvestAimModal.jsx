@@ -17,7 +17,7 @@ const InvestAimModal = ({aim}) => {
   const refill = (e, value) => {
     e.preventDefault()
 
-    if(value > 0 && value <= balance && error === '') {
+    if(Number(value) > 0 && Number(value) <= balance) {
       dispatch(refillAim({id: aim.id, sum: value}))
       dispatch(decreaseBalance(value))
       dispatch(addExpense(Number(value)))
@@ -27,6 +27,7 @@ const InvestAimModal = ({aim}) => {
         type: "EXPENSE"
       }))
       dispatch(closeModalForm(aim.id))
+      setError('')
     } else {
       setError('У вас недостаточно средств')
     }
