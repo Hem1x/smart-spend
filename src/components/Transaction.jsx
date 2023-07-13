@@ -17,8 +17,8 @@ const Transaction = ({tranc}) => {
     image: outgoingIcon,
   }
 
-  const hours = tranc.date.hours <= 9 ? '0' + tranc.date.hours : tranc.date.hours
-  const minutes = tranc.date.minutes <= 9 ? '0' + tranc.date.minutes : tranc.date.minutes
+  const hours = tranc.date.hours
+  const minutes = tranc.date.minutes
 
   return (
     <li className='flex justify-between items-center shadow-sm mb-6'>

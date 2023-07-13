@@ -29,8 +29,8 @@ const historySlice = createSlice({
                 date: {
                     day: new Date().getDate(),
                     month: months[Number(new Date().getMonth())],
-                    hours: new Date().getHours(),
-                    minutes: new Date().getMinutes()
+                    hours: new Date().getHours() <= 9 ? '0' + new Date().getHours() : new Date().getHours(),
+                    minutes: new Date().getMinutes() <= 9 ? '0' + new Date().getMinutes() : new Date().getMinutes()
                 }
             }
             
