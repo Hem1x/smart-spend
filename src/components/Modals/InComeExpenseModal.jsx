@@ -43,7 +43,7 @@ const InComeExpenseModal = ({title}) => {
                             required
                             autoFocus
                             maxLength={9}
-                            type='number'
+                            type='text'
                             className='bg-transparent w-full text-gray-100'
                             style={{ userSelect: 'none' }}
                             onChange={(e) => setValue(e.target.value)}

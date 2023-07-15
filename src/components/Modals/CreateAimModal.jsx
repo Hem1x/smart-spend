@@ -39,7 +39,7 @@ const CreateAimModal = ({title}) => {
             <div className='bg-gray-200 py-2 px-5 rounded-full mb-4 relative'>
                 <input
                     required
-                    type='number'
+                    type='text'
                     maxLength={10}
                     className='bg-transparent w-full text-gray-100' 
                     placeholder='Необходимая сумма'

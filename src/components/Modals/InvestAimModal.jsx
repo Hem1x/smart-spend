@@ -39,7 +39,7 @@ const InvestAimModal = ({aim}) => {
               <input
                 required
                 autoFocus
-                type='number'
+                type='text'
                 maxLength={10}
                 onChange={(e) => setValue(e.target.value)}
                 className='bg-transparent w-full text-gray-100' 
