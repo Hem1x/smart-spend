@@ -5,7 +5,7 @@ import { refillAim, closeModalForm } from '../../features/Aims/aimSlice'
 import { decreaseBalance } from '../../features/Finances/financeSlice'
 import { addTransaction } from '../../features/History/historySlice'
 import { addExpense } from '../../features/Finances/financeSlice'
-import { numberWithSpaces } from '../../utils'
+import { inputOnlyNumber, numberWithSpaces } from '../../utils'
 
 const InvestAimModal = ({aim}) => {
   const dispatch = useDispatch()
@@ -41,7 +41,7 @@ const InvestAimModal = ({aim}) => {
                 autoFocus
                 type='text'
                 maxLength={10}
-                onChange={(e) => setValue(e.target.value)}
+                onChange={(e) => inputOnlyNumber(e, setValue)}
                 className='bg-transparent w-full text-gray-100' 
                 placeholder='Введите сумму'
               />

@@ -22,6 +22,14 @@ const CreateAimModal = ({title}) => {
         dispatch(closeAll())
     }
 
+    const inputOnlyNumber = (e) => {
+        if(!isNaN(e.target.value)) {
+            setAimObj({...aimObj, nessarySum: e.target.value})
+        } else {
+            e.target.value = ''
+            setAimObj({...aimObj, nessarySum: null})
+    }}
+
   return (
     <ModalWindow title={title} width='600px'>
         <form onSubmit={(e) => createAim(e, aimObj)}>
@@ -39,11 +47,10 @@ const CreateAimModal = ({title}) => {
             <div className='bg-gray-200 py-2 px-5 rounded-full mb-4 relative'>
                 <input
                     required
-                    type='text'
                     maxLength={10}
                     className='bg-transparent w-full text-gray-100' 
                     placeholder='Необходимая сумма'
-                    onChange={(e) => setAimObj({...aimObj, nessarySum: e.target.value})}
+                    onChange={inputOnlyNumber}
                 />
                 {aimObj.nessarySum && <h1 className='absolute left-4 top-2'>{numberWithSpaces(Number(aimObj.nessarySum))} ₽</h1>}
             </div>

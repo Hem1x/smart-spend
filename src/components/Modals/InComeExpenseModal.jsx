@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import { addExpense, addIncome, increaseBalance, decreaseBalance } from '../../features/Finances/financeSlice'
 import { closeAll } from '../../features/Modal/modalSlice'
 import { addTransaction } from '../../features/History/historySlice'
-import { numberWithSpaces } from '../../utils'
+import { inputOnlyNumber, numberWithSpaces } from '../../utils'
 
 const InComeExpenseModal = ({title}) => {
     const [value, setValue] = useState('')
@@ -46,7 +46,7 @@ const InComeExpenseModal = ({title}) => {
                             type='text'
                             className='bg-transparent w-full text-gray-100'
                             style={{ userSelect: 'none' }}
-                            onChange={(e) => setValue(e.target.value)}
+                            onChange={(e) => inputOnlyNumber(e, setValue)}
                             placeholder='Введите сумму'
                         />
                         {value && <h1 className='absolute left-4 top-2'>{numberWithSpaces(Number(value))} ₽</h1>}
