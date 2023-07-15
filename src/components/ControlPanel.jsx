@@ -33,7 +33,7 @@ const ControlPanel = ({setIsMenuActive, hadnleClose}) => {
                     <h2>Новостной блог</h2>
                 </NavLink>
 
-                <NavLink to='/history' className='block lg:hidden sidebar-link' onClick={hadnleClose}>
+                <NavLink to='/history' className='sidebar-link' onClick={hadnleClose}>
                     <img className='mr-3 xl:mr-4' src={history} alt="news" />
                     <h2>История</h2>
                 </NavLink>

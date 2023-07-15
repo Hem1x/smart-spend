@@ -6,6 +6,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const RightSidebar = () => {
     const transactionList = useSelector(state => state.history)
+    const transactionListSlice = transactionList.slice(-5)
 
     return (
         <div className='hidden lg:block w-fit relative bg-secondary text-white text-center px-5 xl:px-7 pt-5 xl:pt-8 overflow-auto'>
@@ -23,7 +24,7 @@ const RightSidebar = () => {
             <div className='bg-bgHistory w-full relative'>
                 <div className='mt-6 absolute left-0 right-0 top-0'>
                     <TransitionGroup component="ul" className="transaction-list">
-                    {transactionList.map((tranc) => (
+                    {transactionListSlice.map((tranc) => (
                         <CSSTransition key={tranc.id} timeout={500} classNames="fade">
                             <Transaction tranc={tranc} />
                         </CSSTransition>

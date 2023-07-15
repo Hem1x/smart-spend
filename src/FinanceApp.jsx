@@ -32,6 +32,7 @@ const FinanceApp = () => {
             {expense && <InComeExpenseModal title="Расходы"/>}
             <div className={`bg-primary h-screen flex ${isMenuActive ? '' : 'flex-col'} justify-between`}>
 
+
                 <Header isMenuActive={isMenuActive} setIsMenuActive={setIsMenuActive}/>
                 <LeftSidebar isMenuActive={isMenuActive} setIsMenuActive={setIsMenuActive}/>
 
